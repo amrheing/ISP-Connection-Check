@@ -19,6 +19,11 @@ import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
 
+PROGRAM_NAME = "ISP Connection Check"
+PROGRAM_VERSION = "1.0.0"
+PROGRAM_LICENSE = "MIT"
+PROGRAM_URL = "https://github.com/amrheing/ISP-Connection-Check"
+
 
 @dataclass
 class TargetState:
@@ -373,6 +378,11 @@ def format_speed_stat_entry(entry: dict | None) -> str:
 
 
 def main() -> int:
+    print("=" * 50)
+    print(f" {PROGRAM_NAME} v{PROGRAM_VERSION}")
+    print(f" License: {PROGRAM_LICENSE} - {PROGRAM_URL}")
+    print("=" * 50)
+
     script_dir = Path(__file__).resolve().parent
     config_path = Path(sys.argv[1]).expanduser() if len(sys.argv) > 1 else script_dir / "pingmon.json"
     if not config_path.is_absolute():
