@@ -1,0 +1,48 @@
+{
+  "targets": {
+    "dns": "1.1.1.1",
+    "web": "google.com",
+    "gateway": ""
+  },
+  "connection_profiles": {
+    "starlink": {
+      "match": [
+        "starlink",
+        "spacex",
+        "space exploration technologies"
+      ],
+      "interval": 2,
+      "ping_timeout": 1,
+      "failure_threshold": 3
+    },
+    "cellular": {
+      "match": [
+        "telekom",
+        "vodafone",
+        "t-mobile",
+        "o2 ",
+        "mobilfunk",
+        "cellular",
+        " lte",
+        "wireless",
+        "mobile"
+      ],
+      "interval": 2,
+      "ping_timeout": 1,
+      "failure_threshold": 1
+    },
+    "default": {
+      "match": [],
+      "interval": 2,
+      "ping_timeout": 1,
+      "failure_threshold": 1
+    }
+  },
+  "isp_check_interval": 15,
+  "speed_test_on_connection_change": true,
+  "speed_test_interval_minutes": 10,
+  "log_dir": "logs",
+  "log_prefix": "ping_monitor",
+  "logfiles_to_keep": 10,
+  "verbose_downtime": true
+}
