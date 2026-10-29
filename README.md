@@ -28,6 +28,19 @@ No third-party packages required.
 
 ## Usage
 
+### GUI
+
+```bash
+python3 pingmon_gui.py [path/to/config.json]
+```
+
+- **Monitor** tab: Start/Stop, overall status (online / degraded / outage), connection & settings in use, per-target status/outages/downtime, and the full terminal output.
+- **Settings** tab: edit all options below (targets, connection profiles, overrides, speed test, logging) and save them to the config file - no JSON editing needed. Restart monitoring to apply changes.
+
+The GUI needs Tkinter with Tk 8.6+. On macOS don't use Apple's `/usr/bin/python3` (Tk 8.5 shows an empty black window) - use the python.org installer or `brew install python python-tk`. Linux: `sudo apt install python3-tk` (Debian/Ubuntu), `sudo dnf install python3-tkinter` (Fedora).
+
+### Command line
+
 ```bash
 python3 pingmon.py [path/to/config.json]
 ```
